@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      .app {
+        height: 100vh;
+      }
+      .app .navbar {
+        display: flex;
+        justify-content: space-between;
+        background-color: black;
+        color: white;
+        padding: 15px 40px;
+        position:sticky;
+        top: 1px;
+      }
+      .navbar img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50px;
+      }
+      .navbar div,
+      .navbar ul {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        list-style: none;
+      }
+      .navbar ul a {
+        color: rgba(255, 255, 255, 0.606);
+        text-decoration: none;
+        transition: all 0.1s linear;
+      }
+      .navbar ul a:hover {
+        color: white;
+      }
+      .main-container{
+        height: calc(100vh -104px);
+        overflow-y: scroll;
+      }
+        
+        
+    
+      .profile-container,.skills-container ,.footer-container,.contact-container,.education-container{
+        display: flex;
+        margin: 30px;
+        padding: 30px;
+        border: 1px solid black;
+        border-radius: 20px;
+        gap: 50px;
+        
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        transition: all 0.2s linear;
+        min-width: 300px;
+        box-sizing: border-box;
+      }
+     
+      .profile-container img {
+        width: 250px;
+        border-radius: 125px;
+      }
+      .profile-container:hover,.skills-container:hover ,.footer-container:hover,.contact-container ,.education-container:hover {
+        transform: scale(1.008) translateY(-5px);
+        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.232);
+      }
+      .info-container {
+        min-width: 250px;
+        max-width: 600px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .education-container {
+        min-width: 250px;
+        max-width: 600px;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        align-items: start;
+        gap: 20px;
+      }
+      .info-container > div {
+        display: flex;
+        justify-content: flex-end;
+      }
+      .skoot{
+        margin-left: 50px;
+        margin-top: 30px;
+        margin-bottom: 10px;
+      }
+      .profile-container button {
+        background-color: rgb(0, 0, 0);
+        padding: 10px 20px;
+        border: 2px solid black;
+        font-size: 0.9rem;
+        font-weight: 500;
+        border-radius: 50px;
+        color: white;
+        transition: all 0.1s linear;
+      }
+      .profile-container:hover{
+        background-color: antiquewhite;
+      }
+      .education-container:hover{
+        background-color: aquamarine;
+      }
+      .profile-container button:hover {
+        background-color: rgba(0, 0, 0, 0.893);
+        border-radius: 0;
+      }
+      .skills-container:hover{
+        background-color: rgba(179, 34, 51, 0.854);
+      }
+      .footer-container:hover{
+        color: rgb(255, 249, 249);
+        background-color:rgb(19, 19, 19);
+      }
+      .contact-container:hover{
+        color: blue;
+        background-color: black;
+      }
+      .skills-container>div {
+        border: 1px solid black;
+        padding: 20px;
+        border-radius: 10px;
+        min-width: 200px;
+        flex-grow: 1;
+      }
+      .skills-container h6+p {
+        min-width: 180px;
+        max-width: 350px;
+      }
+      .footer-container >div{
+        min-width: 250px;
+        max-width: 600px;
+        align-items: start;
+        justify-content: space-between;
+        gap: 20px;
+    
+      }
+     
+      .rating-container{
+        display: flex;
+        gap: 10px;
+      }
+
+      .brand-container,.homi{
+        color: transparent;
+        -webkit-text-stroke: 1px rgb(19, 18, 18);
+        background-image:url(./downloadhome.jfif);
+        -webkit-background-clip: text;
+        background-position: 0 0;
+        animation: back 20s infinite;
+      }
+
+      
+      .brand-container h1{
+        color: transparent;
+        -webkit-text-stroke: 1px rgb(19, 18, 18);
+        background-image:url(./downloadhome.jfif);
+        -webkit-background-clip: text;
+        background-position: 0 0;
+        animation: back 20s infinite;
+      }
+      @keyframes back{
+        100%{
+            background-position: 2000px 0;
+        }
+      }
+      .info-container h1{
+        color: transparent;
+        -webkit-text-stroke: 1px rgb(19, 18, 18);
+        background-image:url(./images\ \(1\)unique.jfif);
+        -webkit-background-clip: text;
+        background-position: 0 0;
+        animation: back 20s infinite;
+      }
+      @keyframes back{
+        100%{
+            background-position: 2000px 0;
+        }
+      }
+      .footer-container h3{
+        color: transparent;
+        -webkit-text-stroke: 1px rgb(19, 18, 18);
+        background-image:url(./downloadtomi.jfif);
+        -webkit-background-clip: text;
+        background-position: 0 0;
+        animation: lock 20s infinite;
+      }
+      @keyframes lock{
+        100%{
+            background-position: 2000px 0;
+        }
+      }
+      .form-container {
+        width:clamp(280px,50vw,700px);
+        /* border: 1px solid black; */
+        height: 100px; 
+        display: grid;
+        grid-template-areas: 
+        "a a a a"
+        "b c c c"
+        "d d d d";
+        gap:10px;
+      }
+
+      .form-container>div:nth-child(1) {
+        grid-area: a;
+      }
+      .form-container>div:nth-child(2) {
+        grid-area: b;
+      }
+      .form-container>div:nth-child(3) {
+        grid-area: c;
+      }
+      .form-container>div:nth-child(4) {
+        grid-area: d;
+      }
+      .form-container>div:nth-child(1)~div input {
+        display: block;
+        width: 100%;
+      }
+      .form-container select {
+        width: 100%;
+      }
+      .form-container>div:nth-child(1) {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .form-container>div:nth-child(1)>input {
+        flex-grow: 1;
+      }
+      .form-container input {
+        outline: none;
+        padding: 5px;
+        box-sizing: border-box;
+        border: 2px solid rgb(225, 225, 225);
+        border-radius: 5px;
+        font-size: 1rem;
+      }
+      .form-container select {
+        padding: 5px;
+        outline: none;
+        border: 2px solid rgb(225, 225, 225);
+        border-radius: 5px;
+      }
+      .contact-container {
+        height: 300px;
+        align-items: center;
+        position: relative;
+      }
+      .footer-container {
+        height: 300px;
+        align-items:left;
+        position: relative;
+      }
+      .contact-container>h2 {
+        position: absolute;
+        transform: translateY(-100px);
+      }
+      .form-container input:focus,select:focus {
+        border-color: rgb(12, 143, 183);
+        border-radius: 7px solid ;
+      }
+     .voot{
+      margin-left: 300px;
+      margin-bottom: 200px;
+      opacity: 1;
+      transition: opacity 0.5s ease-in-out;
+      cursor: pointer;
+     }
+     .voot:hover{
+       opacity: 0;
+       transition: opacity 1s ease-out;
+     }
+     .video{
+      height: 80px;
+
+     }
+    
+
+    </style>
+  </head>
+  <body>
+    
+      
+    <div class="app">
+      <div class="navbar">
+        <div class="brand-container">
+          <img
+            src="./images (1)dcon.jfif"
+            alt=""
+          />
+          <h1>MAGICAL VISITERS</h1>
+        </div>
+        <ul>
+          <a href="#" class="homi"><i class="fa-solid fa-house"></i></a>
+          <li><a href="#socia">SOCIAL</a></li>
+          <a href="#" class="homi"><i class="fa-solid fa-pen-nib"></i></a>
+          <li><a href="#contact">CONTACT</a></li>
+          <a href="#" class="homi"><i class="fa-solid fa-phone"></i></a>
+          <li><a href="#home">HOME</a></li>
+         
+            
+        </ul>
+      </div>
+      <div class="main-content">
+        <div class="profile-container">
+          <div class="img-container">
+            <img
+              src="/public/images.png"
+              alt=""
+            />
+          </div>
+          <div class="info-container" id="home">
+            <h1>MR.TUSHAR  RANJAN </h1>
+            <p>
+                Hello welcome to my portfolio , currently i am studing WEB DEVELOPMENT in a private organisation . <br>
+                i created this page as a  front end project . futher scroll below you can found every info about me THANK YOU.
+            </p>
+            <div>
+              <button>MORE INFO</button>
+            </div>
+          </div>
+        </div>
+        <div class="education-container">
+            
+            <h1>-: EDUCATION :- </h1><br>
+            <div>
+                <h2>10 TH</h2><br>
+                <div class="edu-container">
+                  <p>COURSE - B S E</p><br>
+                  <div>
+                    <h5>percentage - 72%</h5>
+                  </div><br>
+                </div>
+                <div>
+                    <h6>SINGHPUR HIGH SCHOOL , ODISHA</h6><br><br>
+                   
+                </div>
+                <div>
+                    <h2>INTER MEDIATE</h2><br>
+                    <div class="edu-container">
+                      <p>COURSE - +2 SCIENCE</p><br>
+                      <div>
+                        <h5>percentage - 60%</h5><br>
+                      </div>
+                    </div>
+                    <div>
+                        <h6>HI-TECH +2 SCIENCE COLLEGE,KUAKHIA , ODISHA</h6><br><br>
+                       
+                    </div>
+                    <div>
+                        <h2>DEGREE</h2><br>
+                        <div class="edu-container">
+                          <p>COURSE - B - T E C H</p><br>
+                          <div>
+                            <h5>CGPA - 8.2</h5><br>
+                          </div>
+                        </div>
+                        <div>
+                            <h6>GANDHI ENGINEERING COLLEGE,BHUBANESWAR, ODISHA</h6><br><br>
+                           
+                        </div>
+              </div>
+              </div>
+              </div>
+        </div>
+        <H1 class="skoot">-: SKILLS :-</H1>
+        <div class="skills-container">
+          <div>
+            <h2>HTML</h2>
+            <div class="rating-container">
+              <p>Self Rating </p><br>
+              <div>
+                <i class="fa-solid fa-star" style="color: #f0f415;"></i>
+                <i class="fa-solid fa-star" style="color: #f0f415;"></i>
+                <i class="fa-solid fa-star" style="color: #f0f415;"></i>
+                <i class="fa-solid fa-star" style="color: #f0f415;"></i>
+                <i class="fa-solid fa-star"></i><br>
+              </div>
+            </div>
+            <div>
+                <h6>Experince</h6><br>
+                <p>Still now no experience in a company, but i have done many projects using this as a fresher and i also done a full stack course on MERN STACK at J spider.you can check my project also.</p>
+            </div>
+          </div>
+          <div>
+            <h2>CSS</h2>
+            <div class="rating-container">
+                <p>Self Rating </p><br>
+              <div>
+                <i class="fa-solid fa-star" style="color: #f0f415;"></i>
+                <i class="fa-solid fa-star" style="color: #f0f415;"></i>
+                <i class="fa-solid fa-star" style="color: #f0f415;"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><br>
+              </div>
+            </div>
+            <div>
+                <h6>Experince</h6>
+                <p>Still now no experience in a company, but i have done many projects using this as a fresher  and i also done a full stack course on MERN STACK at J spider.you can check my project also.</p>
+            </div>
+          </div>
+          <div>
+            <h2>Java Script</h2>
+            <div class="rating-container">
+                <p>Self Rating</p><br>
+              <div>
+                <i class="fa-solid fa-star" style="color: #f0f415;"></i>
+                <i class="fa-solid fa-star" style="color: #f0f415;"></i>
+                <i class="fa-solid fa-star" style="color: #f0f415;"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><br>
+              </div>
+            </div>
+            <div>
+                <h6>Experince</h6><br>
+                <p>Still now no experience in a company, but i have done many projects using this as a fresher and i also done a full stack course on MERN STACK at J spider.you can check my project also.</p>
+            </div>
+          </div>
+          <div>
+            <h2>REACT JS</h2>
+            <div class="rating-container">
+                <p>Self Rating</p><br>
+              <div>
+                <i class="fa-solid fa-star" style="color: #f0f415;"></i>
+                <i class="fa-solid fa-star" style="color: #f0f415;"></i>
+                <i class="fa-solid fa-star" style="color: #f0f415;"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><br>
+              </div>
+            </div>
+            <div>
+                <h6>Experince</h6><br>
+                <p>Still now no experience in a company, but i have done many projects using this as a fresher and i also done a full stack course on MERN STACK at J spider.you can check my project also.</p>
+            </div>
+          </div>
+          <div>
+            <h2>MONGO DB</h2>
+            <div class="rating-container">
+                <p>Self Rating</p><br>
+              <div>
+                <i class="fa-solid fa-star" style="color: #f0f415;"></i>
+                <i class="fa-solid fa-star" style="color: #f0f415;"></i>
+                <i class="fa-solid fa-star" style="color: #f0f415;"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><br>
+              </div>
+            </div>
+            <div>
+                <h6>Experince</h6><br>
+                <p>Still now no experience in a company, but i have done many projects using this as a fresher  and i also done a full stack course on MERN STACK at J spider.you can check my project also.</p>
+            </div>
+          </div>
+          <div>
+            <h2>NODE JS</h2>
+            <div class="rating-container">
+                <p>Self Rating</p><br>
+              <div>
+                <i class="fa-solid fa-star" style="color: #f0f415;"></i>
+                <i class="fa-solid fa-star" style="color: #f0f415;"></i>
+                <i class="fa-solid fa-star" style="color: #f0f415;"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><br>
+              </div>
+            </div>
+            <div>
+                <h6>Experince</h6><br>
+                <p>Still now no experience in a company, but i have done many projects using this as a fresher and i also done a full stack course on MERN STACK at J spider.you can check my project also.</p>
+            </div>
+          </div>
+          <div>
+            <h2>EXPRESS JS JS</h2>
+            <div class="rating-container">
+                <p> Self Rating</p><br>
+              <div>
+                <i class="fa-solid fa-star" style="color: #f0f415;"></i>
+                <i class="fa-solid fa-star" style="color: #f0f415;"></i>
+                <i class="fa-solid fa-star" style="color: #f0f415;"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><br>
+              </div>
+            </div>
+            <div>
+                <h6>Experience</h6><br>
+                <p>Still now no experience in a company, but i have done many projects using this as a fresher  and i also done a full stack course on MERN STACK at J spider.you can check my project also.</p>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="contact-container" id="contact">
+          <h2>CONTACT US</h2>
+              <form action="">
+                  <div class="form-container">
+                    <div>
+                      <input type="text" name="firstName" placeholder="Enter First Name">
+                      <input type="text" name="lastName" placeholder="Enter Last Name">
+                    </div>
+                    <div>
+                      <select name="countryCode" id="">
+                        <option value="">Select code</option>
+                        <option value="+91">India</option>
+                        <option value="+1">US</option>
+                        <option value="+97">Srilanka</option>
+                      </select>
+                      <input type="number" maxlength="10" placeholder="Enter  Phone Number ">
+                      <input type="text"Name="e-mail" placeholder="Enter Your E-MAIL"><br>
+                      <h2><a href="submit"><button>SUBMIT</button></a></h2>
+                    </div>
+                    </div>
+                    </form>
+                    </div>
+        <div class="footer-container" id="social">
+            <div class="hello">
+           
+            <h5>ADRESS - MUNNENKOLLAL 6TH CROSS ROAD, BENGALURU, KARNATAKA (TEMPORARY)</h5><br><br>
+            <h5>BUISNESS MAIL -tushar28*8@gmail.com</h5><br>
+            <h3> ALSO CONTACT ME AT</h3><br>
+            LINKED-IN <a href="linkedin"><i class="fa-brands fa-linkedin"></i></a><br><br>
+            INSTAGRAM <a href="insta"><i class="fa-brands fa-square-instagram" style="color: #f202ee;"></i></a><br><br>
+            TWITER <a href="twiter"><i class="fa-brands fa-twitter"></i></a><br><br><br><br>
+            
+            
+
+            </div>
+            </div>
+            
+            <h4 class="voot">UNDER ARTICLE 189# , ALL COPYRIGHTS RESERVED @ MAGICAL VISITERS.COM</h4><br><br><br>
+            
+        </div>
+        </div>
+      </div>
+      
+    </div>
+    
+  </body>
+</html>
+
